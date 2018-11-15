@@ -68,13 +68,13 @@ class ToastNotifier(object):
         :icon_path: path to the .ico file to custom notification
         :duration: delay in seconds before notification self-destruction
         """
-        message_map = {WM_DESTROY: self.on_destroy, }
+        #message_map = {WM_DESTROY: self.on_destroy, }
 
         # Register the window class.
         self.wc = WNDCLASS()
         self.hinst = self.wc.hInstance = GetModuleHandle(None)
         self.wc.lpszClassName = str("PythonTaskbar")  # must be a string
-        self.wc.lpfnWndProc = message_map  # could also specify a wndproc.
+        #self.wc.lpfnWndProc = message_map  # could also specify a wndproc.
         try:
             self.classAtom = RegisterClass(self.wc)
         except:
